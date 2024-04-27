@@ -8,6 +8,7 @@ import Home from "../Pages/Home/Home";
 import AddTouristsSpot from "../Pages/AddTouristsSpot/AddTouristsSpot";
 import UpdatePage from "../Pages/UpdateTour/UpdatePage";
 import TouristsSpot from "../Pages/TouristsSpot/TouristsSpot";
+import Details from "../Pages/Details/Details";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -15,7 +16,8 @@ import TouristsSpot from "../Pages/TouristsSpot/TouristsSpot";
       children:[
         {
             path:"/",
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=> fetch('http://localhost:5000/tour')
         },
         {
          path:"/addedTour",
@@ -28,6 +30,11 @@ import TouristsSpot from "../Pages/TouristsSpot/TouristsSpot";
         {
             path:"/tourist",
             element:<TouristsSpot></TouristsSpot>,
+            loader:()=> fetch('http://localhost:5000/tour')
+            
+           }, {
+            path:"/tour/:_id",
+            element:<Details></Details>,
             loader:()=> fetch('http://localhost:5000/tour')
             
            }
