@@ -7,8 +7,9 @@ const Navbar = () => {
     const navLink = <>
 
 <li><NavLink to="/">Home</NavLink></li>
+<li><NavLink to="/tourist">Tourists Spot</NavLink></li>
     <li><NavLink to="/addedTour">Add Tourists Spot</NavLink></li>
-    {/* <li><NavLink to="/update">Update Profile</NavLink></li> */}
+  
     {/* <li><NavLink to="/land">Lands and Farm</NavLink></li> */}
 
   </>

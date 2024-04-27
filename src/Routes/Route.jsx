@@ -7,6 +7,7 @@ import Root from "../Layout/Root";
 import Home from "../Pages/Home/Home";
 import AddTouristsSpot from "../Pages/AddTouristsSpot/AddTouristsSpot";
 import UpdatePage from "../Pages/UpdateTour/UpdatePage";
+import TouristsSpot from "../Pages/TouristsSpot/TouristsSpot";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -23,6 +24,12 @@ import UpdatePage from "../Pages/UpdateTour/UpdatePage";
         {
             path:"/update",
             element:<UpdatePage></UpdatePage>
+           },
+        {
+            path:"/tourist",
+            element:<TouristsSpot></TouristsSpot>,
+            loader:()=> fetch('http://localhost:5000/tour')
+            
            }
       ]
     },
