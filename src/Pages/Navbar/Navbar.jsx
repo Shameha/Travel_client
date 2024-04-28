@@ -19,7 +19,7 @@ logOut()
 <li><NavLink to="/tourist">Tourists Spot</NavLink></li>
     <li><NavLink to="/addedTour">Add Tourists Spot</NavLink></li>
   
-    {/* <li><NavLink to="/land">Lands and Farm</NavLink></li> */}
+    <li><NavLink to="/list">My List</NavLink></li>
 
   </>
     return (
@@ -52,11 +52,13 @@ logOut()
   <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
     <div className="w-10 rounded-full">
       <img alt="Tailwind CSS Navbar component" src={user?.photoURL||""} /> 
+
+
       
     </div>
   </div>
 </div>
-
+<p>{user?.email}</p>
 
 
 {

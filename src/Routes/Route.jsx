@@ -12,6 +12,7 @@ import Details from "../Pages/Details/Details";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivatRoute from "./PrivatRoute";
+import Mylist from "../Pages/Mylist/Mylist";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -50,7 +51,13 @@ import PrivatRoute from "./PrivatRoute";
               path:'/register',
               element:<Register></Register>
              
-           }
+           },
+           {
+            
+            path:'/list',
+            element:<Mylist></Mylist>
+           
+         },
 
       ]
     },
