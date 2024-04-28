@@ -1,8 +1,13 @@
 // import React from 'react';
 
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContex } from "../../Provider/AuthProvider";
 
 const Register = () => {
+    const {creatUser,updateUseprofile} = useContext(AuthContex);
+   
+   
     const handleRegister = e =>{
         e.preventDefault();
     console.log(e.currentTarget);
@@ -13,6 +18,26 @@ const Register = () => {
         const photo = form.get('photo');
 
         console.log(email,name,password,photo);
+
+        creatUser(email,password)
+        .then(result =>{
+          updateUseprofile(name,photo)
+          
+          .then(()=>{
+
+            console.log("Updation complete",result.user);
+            
+            // toast.success("Register success");
+            // navigate(location?.state?location.state: '/');
+
+            
+          })
+        })
+        .catch(error =>{
+          console.error(error)
+        })
+
+
     }
 
     return (
