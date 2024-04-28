@@ -37,7 +37,7 @@ const{spot,cost,season,time,visitor,photo,_id} = tour
     </div>
         </div>
     <div className="card-actions justify-center">
-     <Link to={`/tour/${_id}`}><button className="btn bg-blue-300">View Details</button></Link>
+     <Link to={`/detail/${_id}`}><button className="btn bg-blue-300">View Details</button></Link>
     </div>
   </div>
 </div>

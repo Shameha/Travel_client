@@ -33,9 +33,9 @@ import Details from "../Pages/Details/Details";
             loader:()=> fetch('http://localhost:5000/tour')
             
            }, {
-            path:"/tour/:_id",
+            path:"/detail/:id",
             element:<Details></Details>,
-            loader:()=> fetch('http://localhost:5000/tour')
+            loader:({params})=> fetch(`http://localhost:5000/tour/${params.id}`)
             
            }
       ]
