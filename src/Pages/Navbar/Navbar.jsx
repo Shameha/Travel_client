@@ -2,8 +2,17 @@
 
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/gratis-png-ilustracion-de-viajes-mundiales-mapa-del-mundo-viajes-mundiales-viajes-globales.png"
+import { useContext } from "react";
+import { AuthContex } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContex);
+const handleSignOut =()=>{
+logOut()
+.then()
+.catch()
+}
+
     const navLink = <>
 
 <li><NavLink to="/">Home</NavLink></li>
@@ -37,14 +46,13 @@ const Navbar = () => {
   <div className="navbar-end">
 
 
-<div className="tooltip mt-5" data-tip= ""
-// {user?.displayName||""}
+<div className="tooltip mt-5" data-tip={user?.displayName||""}
 >
   
   <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
     <div className="w-10 rounded-full">
-      <img alt="Tailwind CSS Navbar component" src='' /> 
-      {/* src={user?.photoURL||""} */}
+      <img alt="Tailwind CSS Navbar component" src={user?.photoURL||""} /> 
+      
     </div>
   </div>
 </div>
@@ -52,7 +60,7 @@ const Navbar = () => {
 
 
 {
-  // user ?<button onClick={handleSignOut} className="btn mt-5 ">Sign Out</button> :
+  user ?<button onClick={handleSignOut} className="btn mt-5 ">Sign Out</button> :
     <Link to="/login"><button className="btn ">Login</button></Link>
 }
 </div>

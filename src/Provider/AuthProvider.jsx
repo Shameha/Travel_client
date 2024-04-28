@@ -1,8 +1,8 @@
 // import React from 'react';
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 const auth = getAuth(app);
@@ -20,10 +20,10 @@ const creatUser =(email,password) =>{
 }
 
 
-const updateUseprofile=(name,photo) =>{
+const updateUseprofile=(name,image) =>{
     return updateProfile(auth.currentUser, {
          displayName:name, 
-         photoURL:photo
+         photoURL:image
        })
  
  }
@@ -46,11 +46,27 @@ const signIn = (email,password) =>{
     setLoding(true);
     return signInWithEmailAndPassword(auth,email,password);
 }
+const logOut = () =>{
+  setLoding(true);
+  return signOut(auth);
+}
+
+useEffect(()=>{
+ const unsubscribe=onAuthStateChanged(auth,currentUser =>{
+  console.log("user in auth",currentUser);
+  setUser(currentUser)
+ });
+ return () =>{
+  unsubscribe();
+ }
+},[])
+
 const userInfo={
     user,
     loading,
     creatUser,
     signIn,
+    logOut,
     updateUseprofile,
     googleLogin,
 }
