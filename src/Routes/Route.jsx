@@ -11,6 +11,7 @@ import TouristsSpot from "../Pages/TouristsSpot/TouristsSpot";
 import Details from "../Pages/Details/Details";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivatRoute from "./PrivatRoute";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -36,7 +37,7 @@ import Register from "../Pages/Register/Register";
             
            }, {
             path:"/detail/:id",
-            element:<Details></Details>,
+            element:<PrivatRoute><Details></Details></PrivatRoute>,
             loader:({params})=> fetch(`http://localhost:5000/tour/${params.id}`)
             
            },

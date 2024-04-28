@@ -4,6 +4,8 @@ import { createContext, useEffect, useState } from "react";
 
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
@@ -32,12 +34,15 @@ const updateUseprofile=(name,image) =>{
     signInWithPopup(auth,provider)
     .then((result) => {
       const user = result.user;
-    // toast.success('login succssfully',user);
+    toast.success('login succssfully',user);
   console.log(user);
 
     }).catch((error) => {
-    // toast.error(error.massage)
+    toast.error(error.massage)
     console.error(error);
+    
+    <ToastContainer />
+
     });
 }
  
@@ -55,6 +60,7 @@ useEffect(()=>{
  const unsubscribe=onAuthStateChanged(auth,currentUser =>{
   console.log("user in auth",currentUser);
   setUser(currentUser)
+  setLoding(false)
  });
  return () =>{
   unsubscribe();
@@ -76,7 +82,8 @@ const userInfo={
        <AuthContex.Provider value={userInfo}>
              {children}
        </AuthContex.Provider>
+       
     );
-};
+  };
 
 export default AuthProvider;

@@ -3,7 +3,8 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContex } from "../../Provider/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
 
@@ -24,14 +25,18 @@ const Register = () => {
         
         if (password.length < 6) {
           toast.warn("Your password needs a minimum of four characters")
+        //  console.log("Your password needs a minimum of four characters")
         } else if (password.search(/[a-z]/) < 0) {
           toast.warn("Your password needs a lower case letter")
+          // toast.warn("Your password needs a lower case letter")
         } else if(password.search(/[A-Z]/) < 0) {
           toast.warn("Your password needs an uppser case letter")
+          // toast.warn("Your password needs an uppser case letter")
         } else  if (password.search(/[0-9]/) < 0) {
           toast.warn("Your password needs a number")
+          // toast.warn("Your password needs a number")
         } else {
-            toast.success("Registered success fully")
+          toast.success("Registered success fully")
         }
 
         creatUser(email,password)

@@ -1,0 +1,37 @@
+.slide {
+    
+    margin-top: 10vh;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.slide1{
+
+    background-image: url('../../assets/pexels-chaitaastic-1796716.jpg');
+    opacity: 0.9;
+    
+}
+
+.slide2{
+
+    background-image: url('../../assets/pexels-ozrenildo-1291766.jpg');
+    opacity: 0.9;
+}
+
+.slide3{
+    background-image: url('../../assets/pexels-pixabay-532263.jpg');
+    opacity: 0.9;
+}
+
+.slide4{
+
+    background-image: url('../../assets/pexels-tanathip-rattanatum-1050216-2026454.jpg');
+}
+ 
