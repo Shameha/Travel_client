@@ -9,6 +9,8 @@ import AddTouristsSpot from "../Pages/AddTouristsSpot/AddTouristsSpot";
 import UpdatePage from "../Pages/UpdateTour/UpdatePage";
 import TouristsSpot from "../Pages/TouristsSpot/TouristsSpot";
 import Details from "../Pages/Details/Details";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -37,7 +39,18 @@ import Details from "../Pages/Details/Details";
             element:<Details></Details>,
             loader:({params})=> fetch(`http://localhost:5000/tour/${params.id}`)
             
+           },
+           {
+            path:'/login',
+            element:<Login></Login>
+           },
+           {
+            
+              path:'/register',
+              element:<Register></Register>
+             
            }
+
       ]
     },
   ]);

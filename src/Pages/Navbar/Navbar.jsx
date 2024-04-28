@@ -1,6 +1,6 @@
 // import React from 'react';
 
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/gratis-png-ilustracion-de-viajes-mundiales-mapa-del-mundo-viajes-mundiales-viajes-globales.png"
 
 const Navbar = () => {
@@ -33,11 +33,33 @@ const Navbar = () => {
     {navLink}
     </ul>
   </div>
+  
   <div className="navbar-end">
-    <a className="btn">Button</a>
+
+
+<div className="tooltip mt-5" data-tip= ""
+// {user?.displayName||""}
+>
+  
+  <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+    <div className="w-10 rounded-full">
+      <img alt="Tailwind CSS Navbar component" src='' /> 
+      {/* src={user?.photoURL||""} */}
+    </div>
   </div>
+</div>
+
+
+
+{
+  // user ?<button onClick={handleSignOut} className="btn mt-5 ">Sign Out</button> :
+    <Link to="/login"><button className="btn ">Login</button></Link>
+}
+</div>
+<Link to='/register'><button type="button" className="btn">Register</button></Link>
+</div>
 </div> 
-        </div>
+        
     );
 };
 
