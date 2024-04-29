@@ -2,55 +2,67 @@
 
 import { useContext, useEffect, useState } from "react";
 import { AuthContex } from "../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 // import { FaTachographDigital } from "react-icons/fa6";
 
 const Mylist = () => {
     const {user} = useContext(AuthContex);
     const [item,setItem] = useState([])
-    console.log(user);
+    console.log(item);
+
     useEffect(() =>{
      fetch(`http://localhost:5000/intour/${user?.email}`)
       .then(res=>res.json())
       .then(data =>{
         console.log(data);
+        setItem(data)
       });
-    },[user])
+    },[user?.email])
 
-
+const handleDelete =_id=>{
+console.log(_id);
+}
     return (
       <div className="overflow-x-auto">
 
-        {
-          item.map( p =>{
-            <div><h2>hello</h2></div>
+        {/* {
+          item.map(p=>{
+          return <p>{p.spot}</p>
           })
-        }
-  {/* <table className="table"> */}
+        } */}
+         
+  <table className="table">
     {/* head */}
-    {/* <thead>
+ <thead>
       <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>place</th>
+        <th>country</th>
+        <th>Cost</th>
+        <th>Season</th>
       </tr>
     </thead>
     <tbody>
-      {/* row 1 */}
-    {/* {
+      
+     {
       item.map(p=>
         <tr key={p._id}>
         <th>{p.spot}</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
+        <td>{p.country}</td>
+        <td>{p.cost}</td>
+        <td>{p.season}</td>
+           {/* row 2 */}
+    <div className="flex gap-5">
+    <Link to={`/update/${p._id}`}><button className="btn btn-accent">Update</button></Link>
+    <button onClick={()=> handleDelete()} className="btn btn-secondary">Delete</button>
+
+    </div>
       </tr>
       )
     }
-      {/* row 2 */}
-    
-    {/* </tbody> */}
-  {/* </table> */}
+   
+    </tbody>
+  </table>
+
 </div>
     );
 };

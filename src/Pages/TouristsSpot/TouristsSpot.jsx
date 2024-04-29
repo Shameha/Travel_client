@@ -10,7 +10,7 @@ const tours = useLoaderData();
 
     const [tourists, setTourists] = useState(tours);
     const [sortedBy, setSortedBy] = useState(""); 
-
+    console.log(tourists);
     // Function to sort 
     const sortByAverageCost = () => {
         const sortedTourists = [...tourists].sort((a, b) => a.cost - b.cost);

@@ -28,7 +28,7 @@ import Mylist from "../Pages/Mylist/Mylist";
          element:<AddTouristsSpot></AddTouristsSpot>
         },
         {
-            path:"/update",
+            path:"/update/:id",
             element:<UpdatePage></UpdatePage>
            },
         {
