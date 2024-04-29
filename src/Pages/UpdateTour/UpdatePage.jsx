@@ -46,7 +46,7 @@ const UpdatePage = () => {
           <label className="label">
             <span className="label-text">average cost</span>
           </label>
-          <input type="text" placeholder="average cost" name="cost" className="input input-bordered" required />
+          <input type="number" placeholder="average cost" name="cost" className="input input-bordered" required />
         </div>
         <div className=" form-control">
           <label className="label">

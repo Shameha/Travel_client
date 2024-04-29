@@ -3,6 +3,7 @@
 import { useLoaderData } from "react-router-dom";
 import Card from "../Card/Card";
 import Banner from "../Banner/Banner";
+import Extra from "../Extra/Extra";
 // import { useState } from "react";
 
 const Home = () => {
@@ -21,6 +22,8 @@ const Home = () => {
             }
            </div>
            </div>
+           <h1 className="text-center font-bold text-3xl mt-10">Popular sides</h1>
+           <Extra></Extra>
            </div>
     );
 };
