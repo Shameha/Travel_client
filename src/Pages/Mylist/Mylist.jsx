@@ -3,6 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContex } from "../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 // import { FaTachographDigital } from "react-icons/fa6";
 
 const Mylist = () => {
@@ -19,9 +20,47 @@ const Mylist = () => {
       });
     },[user?.email])
 
-const handleDelete =_id=>{
-console.log(_id);
+const handleDelete =id=>{
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      fetch(`http://localhost:5000/delete/${id}`,
+{
+   method:'DELETE',
+  // headers:{
+  //   'content-type':'application/json'
+  // },
+  // body:JSON.stringify(info)
+
 }
+
+)
+.then(res=>res.json())
+.then(data=>{
+  // console.log(data);
+  if(data.deleteCount>0){
+    Swal.fire({
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
+    });
+  }
+})
+}
+      
+    });
+}
+
+
+
+
     return (
       <div className="overflow-x-auto">
 
@@ -53,7 +92,7 @@ console.log(_id);
            {/* row 2 */}
     <div className="flex gap-5">
     <Link to={`/update/${p._id}`}><button className="btn btn-accent">Update</button></Link>
-    <button onClick={()=> handleDelete()} className="btn btn-secondary">Delete</button>
+    <button onClick={()=> handleDelete(p._id)} className="btn btn-secondary">Delete</button>
 
     </div>
       </tr>

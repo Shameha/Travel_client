@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdatePage = () => {
 const {id} = useParams();
@@ -41,6 +42,14 @@ fetch(`http://localhost:5000/updateTour/${id}`,{
 .then(res =>res.json())
 .then(data=>{
   console.log(data);
+  if(data.insertedId){
+    Swal.fire({
+      title: 'Success!',
+      text: 'Added update',
+      icon: 'success',
+      confirmButtonText: 'Cool'
+    })
+  }
 })
 
 }
