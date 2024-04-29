@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/gratis-png-ilustracion-de-viajes-mundiales-mapa-del-mundo-viajes-mundiales-viajes-globales.png"
 import { useContext } from "react";
 import { AuthContex } from "../../Provider/AuthProvider";
+import Theme from "../Theme/Theme";
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContex);
@@ -12,6 +13,8 @@ logOut()
 .then()
 .catch()
 }
+
+
 
     const navLink = <>
 
@@ -44,7 +47,7 @@ logOut()
   </div>
   
   <div className="navbar-end">
-
+<Theme></Theme>
 
 <div className="tooltip mt-5" data-tip={user?.displayName||""}
 >

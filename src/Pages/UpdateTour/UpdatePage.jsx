@@ -3,7 +3,7 @@
 const UpdatePage = () => {
     return (
         <div className="min-h-screen">
-        <h1 className="text-3xl font-bold text-center mt-2">Tourist spots</h1>
+        <h1 className="text-3xl font-bold text-center mt-2">Tourist spots update</h1>
         <p className="text-sm text-center mt-2" >A diverse range of places, including natural wonders, cultural and historical landmarks, architectural marvels, recreational facilities, and entertainment venues.</p>
         <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -70,21 +70,7 @@ const UpdatePage = () => {
           <input type="text" placeholder="total Visitors Per Year" name="visitor" className="input input-bordered" required />
         </div>
        </div>
-       <div className="lg:flex md:flex grid gap-5">
-       <div className=" form-control">
-          <label className="label">
-            {/* name and email */}
-            <span className="label-text">Email</span>
-          </label>
-          <input type="email" placeholder="email" name="email" className="input input-bordered" required />
-        </div>
-        <div className=" form-control">
-          <label className="label">
-            <span className="label-text">Name</span>
-          </label>
-          <input type="text" placeholder="name" name="name" className="input input-bordered" required />
-        </div>
-       </div>
+      
         <div className="form-control">
           <label className="label">
             <span className="label-text">Photo</span>
