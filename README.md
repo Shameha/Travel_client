@@ -1,8 +1,12 @@
-# React + Vite
+live link:
+project name:Visit Vista
+extra 2 side:
+React-simple-typewriter
+React Awesome reveal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+about my project:
+1.here we can show all spot whwn we click we can show details
+2.login with git hub ,gmail
+3.we can apdate our spot
+4.we delete spot
+5.we cans see specific country spacific data 

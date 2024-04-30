@@ -10,7 +10,7 @@ console.log(id);
 
 const[tour,setTour] = useState({});
 useEffect(()=>{
-fetch(`http://localhost:5000/update/${id}`)
+fetch(`https://assingment-lyart.vercel.app/update/${id}`)
 .then(res=>res.json())
 .then(data =>{
   setTour(data)
@@ -32,7 +32,7 @@ const form = e.target;
   const photo = form.photo.value;
   
 const info = {spot,country,location,description,cost,season,time,visitor,photo}
-fetch(`http://localhost:5000/updateTour/${id}`,{
+fetch(`https://assingment-lyart.vercel.app/updateTour/${id}`,{
   method:'PUT',
   headers:{
     'content-type':'application/json'

@@ -24,7 +24,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
         {
             path:"/",
             element:<Home></Home>,
-            loader:()=> fetch('http://localhost:5000/tour'),
+            loader:()=> fetch(' https://assingment-lyart.vercel.app/tour'),
            
 
         },
@@ -39,14 +39,14 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
         {
             path:"/tourist",
             element:<TouristsSpot></TouristsSpot>,
-            loader:()=> fetch('http://localhost:5000/tour'),
+            loader:()=> fetch('https://assingment-lyart.vercel.app/tour'),
              
 
             
            }, {
             path:"/detail/:id",
             element:<PrivatRoute><Details></Details></PrivatRoute>,
-            loader:({params})=> fetch(`http://localhost:5000/tour/${params.id}`)
+            loader:({params})=> fetch(`https://assingment-lyart.vercel.app/tour/${params.id}`)
             
            },
            {
@@ -69,7 +69,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
             
           path:'/country',
           element:<Country></Country>,
-          loader:()=>fetch('http://localhost:5000/country_side')
+          loader:()=>fetch('https://assingment-lyart.vercel.app/country_side')
          
        },
 

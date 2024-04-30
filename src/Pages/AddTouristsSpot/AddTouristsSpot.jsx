@@ -26,7 +26,7 @@ console.log(newTour);
 
 
 //send data
-fetch('http://localhost:5000/tour',{
+fetch('https://assingment-lyart.vercel.app/tour',{
   method:'POST',
   headers:{
     'content-type':'application/json'

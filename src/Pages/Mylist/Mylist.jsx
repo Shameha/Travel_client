@@ -13,7 +13,7 @@ const Mylist = () => {
     console.log(item);
 
     useEffect(() =>{
-     fetch(`http://localhost:5000/intour/${user?.email}`)
+     fetch(`https://assingment-lyart.vercel.app/intour/${user?.email}`)
       .then(res=>res.json())
       .then(data =>{
         console.log(data);
@@ -32,7 +32,7 @@ const handleDelete =id=>{
     confirmButtonText: "Yes, delete it!"
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:5000/delete/${id}`,
+      fetch(`https://assingment-lyart.vercel.app/delete/${id}`,
 {
    method:'DELETE',
   // headers:{
