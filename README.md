@@ -1,4 +1,4 @@
-live link:
+live link:https://assignment10-92c57.web.app
 project name:Visit Vista
 extra 2 side:
 React-simple-typewriter
