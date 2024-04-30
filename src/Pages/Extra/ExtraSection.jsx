@@ -18,7 +18,7 @@ const ExtraSection = () => {
 			<img src="https://source.unsplash.com/640x480/?2" alt="" className="h-80 dark:bg-gray-500 aspect-video" />
 			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
 				<span className="text-xs uppercase dark:text-gray-600">Join,  free</span>
-				<h3 className="text-3xl font-bold">We're not reinventing the wheel</h3>
+				<h3 className="text-3xl font-bold"> not reinventing the wheel</h3>
 				<p className="my-6 dark:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p>
 				<button type="button" className="self-start">Action</button>
 			</div>

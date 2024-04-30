@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../../Provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,6 +11,9 @@ import { FaEyeSlash } from "react-icons/fa";
 const Register = () => {
     const {creatUser,updateUseprofile} = useContext(AuthContex);
     const[open,setOpen] = useState(false);
+    const location= useLocation();
+    // console.log(location);
+const navigate = useNavigate()
    
     const handleRegister = e =>{
         e.preventDefault();
@@ -48,6 +51,7 @@ const Register = () => {
             console.log("Updation complete",result.user);
             
             toast.success("Register success");
+            navigate(location?.state?location.state:'/')
             // navigate(location?.state?location.state: '/');
 
             

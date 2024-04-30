@@ -13,6 +13,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivatRoute from "./PrivatRoute";
 import Mylist from "../Pages/Mylist/Mylist";
+import Country from "../Pages/Country/Country";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -25,7 +26,7 @@ import Mylist from "../Pages/Mylist/Mylist";
         },
         {
          path:"/addedTour",
-         element:<AddTouristsSpot></AddTouristsSpot>
+         element:<PrivatRoute><AddTouristsSpot></AddTouristsSpot></PrivatRoute>
         },
         {
             path:"/update/:id",
@@ -55,9 +56,17 @@ import Mylist from "../Pages/Mylist/Mylist";
            {
             
             path:'/list',
-            element:<Mylist></Mylist>
+            element:<PrivatRoute><Mylist></Mylist></PrivatRoute>
            
          },
+         {
+            
+          path:'/country',
+          element:<Country></Country>,
+          loader:()=> fetch('http://localhost:5000/country_side')
+         
+       },
+
 
       ]
     },

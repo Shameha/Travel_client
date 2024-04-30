@@ -1,13 +1,16 @@
 // import React from 'react';
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../../Provider/AuthProvider";
 import Button from "./Button";
 
 const Login = () => {
 
     const { signIn  } = useContext(AuthContex);
+    const location= useLocation();
+    // console.log(location);
+const navigate = useNavigate()
 
 
     const handleLogin = e =>{
@@ -23,6 +26,7 @@ const Login = () => {
         signIn (email,password)
         .then(result =>{
           console.log(result.user);
+          navigate(location?.state?location.state:'/')
         //   toast.success("Login sucessFully")
           //navigate
         //   navigate(location?.state?location.state: '/');

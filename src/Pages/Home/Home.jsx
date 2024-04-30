@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import Card from "../Card/Card";
 import Banner from "../Banner/Banner";
 import Extra from "../Extra/Extra";
+import ExtraSection from "../Extra/ExtraSection";
 // import { useState } from "react";
 
 const Home = () => {
@@ -24,6 +25,8 @@ const Home = () => {
            </div>
            <h1 className="text-center font-bold text-3xl mt-10">Popular sides</h1>
            <Extra></Extra>
+           <h1>some thing going to excited</h1>
+           <ExtraSection></ExtraSection>
            </div>
     );
 };
