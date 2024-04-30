@@ -14,15 +14,19 @@ import Register from "../Pages/Register/Register";
 import PrivatRoute from "./PrivatRoute";
 import Mylist from "../Pages/Mylist/Mylist";
 import Country from "../Pages/Country/Country";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
   const router = createBrowserRouter([
     {
       path: "/",
+      errorElement:<ErrorPage></ErrorPage>,
       element:<Root></Root>,
       children:[
         {
             path:"/",
             element:<Home></Home>,
-            loader:()=> fetch('http://localhost:5000/tour')
+            loader:()=> fetch('http://localhost:5000/tour'),
+           
+
         },
         {
          path:"/addedTour",
@@ -30,12 +34,14 @@ import Country from "../Pages/Country/Country";
         },
         {
             path:"/update/:id",
-            element:<UpdatePage></UpdatePage>
+            element:<PrivatRoute><UpdatePage></UpdatePage></PrivatRoute>
            },
         {
             path:"/tourist",
             element:<TouristsSpot></TouristsSpot>,
-            loader:()=> fetch('http://localhost:5000/tour')
+            loader:()=> fetch('http://localhost:5000/tour'),
+             
+
             
            }, {
             path:"/detail/:id",
@@ -63,7 +69,7 @@ import Country from "../Pages/Country/Country";
             
           path:'/country',
           element:<Country></Country>,
-          loader:()=> fetch('http://localhost:5000/country_side')
+          loader:()=>fetch('http://localhost:5000/country_side')
          
        },
 

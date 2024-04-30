@@ -6,6 +6,7 @@ import Banner from "../Banner/Banner";
 import Extra from "../Extra/Extra";
 import ExtraSection from "../Extra/ExtraSection";
 import { useTypewriter } from "react-simple-typewriter";
+import Country from "../Country/Country";
 // import { useState } from "react";
 
 const Home = () => {
@@ -26,6 +27,9 @@ const Home = () => {
         <div>
             <div className="mt-20 lg:mt-2 md:mt-20">
             <Banner></Banner>
+            </div>
+            <div>
+                <Country></Country>
             </div>
             <div className="mt-20">
             <h2 className="text-center text-3xl py-5 font-bold">Tourist spot </h2>

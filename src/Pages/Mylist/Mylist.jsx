@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContex } from "../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useTypewriter } from "react-simple-typewriter";
 // import { FaTachographDigital } from "react-icons/fa6";
 
 const Mylist = () => {
@@ -58,11 +59,20 @@ const handleDelete =id=>{
     });
 }
 
-
+const [text] = useTypewriter({
+  words: ['place',
+  'country',
+  'Cost',
+  'Season',
+  ],
+  loop: 0
+})
 
 
     return (
       <div className="overflow-x-auto">
+
+      <h1 className="text-center">This Table represent |{text} </h1>
 
         {/* {
           item.map(p=>{
