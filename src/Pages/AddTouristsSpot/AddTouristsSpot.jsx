@@ -1,7 +1,10 @@
 // import React from 'react';
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContex } from '../../Provider/AuthProvider';
 
 const AddTouristsSpot = () => {
+  const {user} = useContext(AuthContex)
 const handleTourist = e =>{
 e.preventDefault();
 const form = e.target;
@@ -20,6 +23,8 @@ const photo = form.photo.value;
 
 const newTour = {spot,country,location,description,cost,season,time,visitor,name,email,photo}
 console.log(newTour);
+
+
 //send data
 fetch('http://localhost:5000/tour',{
   method:'POST',
@@ -123,7 +128,7 @@ if(data.insertedId){
             {/* name and email */}
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" name="email" className="input input-bordered" required />
+          <input type="email" placeholder="email" value={user?.email} name="email" className="input input-bordered" required />
         </div>
         <div className=" form-control">
           <label className="label">

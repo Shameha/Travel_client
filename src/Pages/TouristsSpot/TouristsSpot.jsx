@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Card from "../Card/Card";
 import { useState } from "react";
 
+
 const TouristsSpot = () => {
     const tours = useLoaderData();
     const [sortedTours, setSortedTours] = useState(tours);
@@ -23,10 +24,11 @@ const TouristsSpot = () => {
                     </li>
                 </ul>
             </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-10 mx-10">
+             
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 lg:gap-10 md:gap-10  mx-10">
                 {sortedTours.map(tour => <Card key={tour._id} tour={tour} />)}
             </div>
+            
         </div>
     );
 };

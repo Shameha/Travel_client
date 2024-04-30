@@ -38,7 +38,7 @@ logOut()
       </ul>
     </div>
     <img src={logo} width={50} height={50} alt="" />
-    <a className=" text-xl font-bold"> Visit Vista</a>
+    <a className=" lg:text-xl md:text-sm text-sm font-bold "> Visit Vista</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -61,7 +61,7 @@ logOut()
     </div>
   </div>
 </div>
-<p>{user?.email}</p>
+{/* <p>{user?.email}</p> */}
 
 
 {

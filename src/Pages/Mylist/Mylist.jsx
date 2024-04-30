@@ -90,7 +90,7 @@ const handleDelete =id=>{
         <td>{p.cost}</td>
         <td>{p.season}</td>
            {/* row 2 */}
-    <div className="flex gap-5">
+    <div className="lg:flex md:flex grid gap-5">
     <Link to={`/update/${p._id}`}><button className="btn btn-accent">Update</button></Link>
     <button onClick={()=> handleDelete(p._id)} className="btn btn-secondary">Delete</button>
 

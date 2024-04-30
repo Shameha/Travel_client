@@ -4,12 +4,14 @@ import { MdAccessTime } from "react-icons/md";
 import { GiCongress } from "react-icons/gi";
 import { ImLocation } from "react-icons/im";
 import { Link } from "react-router-dom";
+import { Zoom } from "react-awesome-reveal";
 
 const Card = ({ tour }) => {
     const { spot, cost, season, time, visitor, photo, _id } = tour;
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
+<Zoom>
             <figure><img src={photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <div className="flex gap-2">
@@ -45,6 +47,7 @@ const Card = ({ tour }) => {
                     </Link>
                 </div>
             </div>
+            </Zoom>
         </div>
     );
 };

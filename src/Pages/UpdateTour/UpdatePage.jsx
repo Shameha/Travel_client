@@ -29,7 +29,9 @@ const form = e.target;
   const season = form.season.value;
   const time = form.time.value;
   const visitor = form.visitor.value;
-const info = {spot,country,location,description,cost,season,time,visitor}
+  const photo = form.photo.value;
+  
+const info = {spot,country,location,description,cost,season,time,visitor,photo}
 fetch(`http://localhost:5000/updateTour/${id}`,{
   method:'PUT',
   headers:{
@@ -42,7 +44,7 @@ fetch(`http://localhost:5000/updateTour/${id}`,{
 .then(res =>res.json())
 .then(data=>{
   console.log(data);
-  if(data.insertedId){
+  if(data.modifiedCount > 0){
     Swal.fire({
       title: 'Success!',
       text: 'Added update',
